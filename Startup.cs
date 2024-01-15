@@ -10,6 +10,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
+using BookShop.Core.Interfaces;
+using BookShop.Core.Services;
+
 
 using Microsoft.EntityFrameworkCore;
 
@@ -47,6 +50,8 @@ namespace BookMarketingVisual
 
             });
 
+
+            services.AddTransient<IUser, UserService>();
 
             services.AddRazorPages();
         }
