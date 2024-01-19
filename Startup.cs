@@ -52,7 +52,7 @@ namespace BookMarketingVisual
 
 
             services.AddTransient<IUser, UserService>();
-
+            services.AddTransient<IAccount, AccountService>();
             services.AddRazorPages();
         }
 

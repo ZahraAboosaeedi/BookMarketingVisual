@@ -10,8 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\Shared\" />
+    <Folder Include="Views\Accounts\" />
     <Folder Include="wwwroot\Images\ads\" />
     <Folder Include="wwwroot\Images\Users\" />
     <Folder Include="wwwroot\Images\Products\" />
