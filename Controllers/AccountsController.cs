@@ -44,6 +44,7 @@ namespace BookMarketingVisual.Controllers
                 {
                     User user = new User
                     {
+
                         Mobile = viewModel.Mobile,
                         ActiveCode = CodeGenerators.ActiveCode(),
                         Code = null,
