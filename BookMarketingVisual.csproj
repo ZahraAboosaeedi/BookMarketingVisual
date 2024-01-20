@@ -10,11 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Accounts\" />
     <Folder Include="wwwroot\Images\ads\" />
     <Folder Include="wwwroot\Images\Users\" />
     <Folder Include="wwwroot\Images\Products\" />
-    <Folder Include="wwwroot\Images\Sites\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +22,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
 </Project>

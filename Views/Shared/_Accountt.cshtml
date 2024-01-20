@@ -1,13 +1,35 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html lang="fa">
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width , initial-scale=1" />
     <title>@ViewBag.Title</title>
+    
+    <link href="~/css/account.css" rel="stylesheet" />
+
+
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="container-fluid">
+
+        <div class="row margin-top-50">
+           
+            <img src="~/Images/Sites/images.png" alt="فروشگاه کتاب" class="img-responsive logo" style="margin:auto"/>
+
+        </div>
+
+        <div class="row margin-top-50">
+
+            <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6  col-sm-offset-3
+                 col-xs-offset-10 col-xs-offset-1">
+
+                @RenderBody()
+
+
+            </div>
+
+        </div>
+
     </div>
 </body>
 </html>
