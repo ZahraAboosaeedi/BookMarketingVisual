@@ -5,36 +5,24 @@
     Layout = "~/Views/Shared/_Accountt.cshtml";
 }
 
-@*<h1>Register</h1>
 
-<h4>RegisterViewModel</h4>
+<h4 class="text-center">عضویت در سایت</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Mobile" class="control-label"></label>
-                <input asp-for="Mobile" class="form-control" />
-                <span asp-validation-for="Mobile" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<form asp-action="Register">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="Mobile" class="form-control input-lg"placeholder=" شماره موبایل" />
+        <span asp-validation-for="Mobile" class="text-danger"></span>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>*@
+    <div class="form-group">
+        <input asp-for="Password" class="form-control input-lg" placeholder="کلمه عبور" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="ConfirmPassword" class="form-control"placeholder="تایید کلمه عبور" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="عضویت در سایت" class="btn-lg btn-block btn-submit" />
+    </div>
+</form>

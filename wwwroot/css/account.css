@@ -18,3 +18,17 @@
     max-width: 80px;
 
 }
+
+.box-login{
+    position:absolute;
+    background:white;
+    height:auto;
+    padding:12px;
+    border:1px solid #ddd;
+}
+
+.btn-submit{
+    color:white;
+    border:1px solid #008999;
+    background:#00bfd6;
+}
