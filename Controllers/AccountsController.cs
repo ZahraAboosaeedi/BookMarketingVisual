@@ -54,7 +54,7 @@ namespace BookMarketingVisual.Controllers
                         FullName = null,
                         IsActive = false,
                         Password = HashGenerators.MD5Encoding(viewModel.Password),
-                        RoleId = _account.GetMinRole()
+                        RoleId = _account.GetMaxRole()
                     };
 
                     _account.AddUser(user);
