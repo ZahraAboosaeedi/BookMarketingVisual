@@ -39,11 +39,11 @@ namespace BookMarketingVisual
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             }).AddCookie(options =>
             {
-                options.LoginPath = "";
-                options.LogoutPath = "";
+                options.LoginPath = "/Accounts/Login";
+                options.LogoutPath = "/Accounts/LogOut";
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
             });
-
+            
             services.AddDbContext<DataBaseContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
@@ -72,13 +72,16 @@ namespace BookMarketingVisual
                 app.UseHsts();
             }
 
-            app.UseMvcWithDefaultRoute();
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
 
             app.UseAuthorization();
+            app.UseMvcWithDefaultRoute();
+            app.UseHttpsRedirection();
+            app.UseRouting();
+            app.UseStaticFiles();
+
+            
+
+            
 
             app.UseEndpoints(endpoints =>
             {
