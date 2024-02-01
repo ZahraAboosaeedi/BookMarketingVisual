@@ -129,7 +129,7 @@ namespace BookMarketingVisual.Controllers
                         var identity= new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         var principal = new ClaimsPrincipal(identity);
 
-                        var properties = new AuthenticationProperties
+                        var properties = new AuthenticationProperties()
                         {
                             IsPersistent = true
                         };
@@ -141,18 +141,19 @@ namespace BookMarketingVisual.Controllers
                             return RedirectToAction("Dashboard", "Home");
 
                         }
-
                     }
                     else
-  
+                    {
                         return RedirectToAction(nameof(Activate));
                     }
-
+          
                 }
                 else
                 {
                     ModelState.AddModelError("Password", "مشخصات کاربری اشتباه است");
                 }
+            }
+                
 
             return View();
         }
