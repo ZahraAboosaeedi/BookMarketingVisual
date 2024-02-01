@@ -157,6 +157,65 @@ namespace BookMarketingVisual.Controllers
             return View();
         }
 
+
+        public IActionResult Forget()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Forget(ForgetViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+
+                if (_account.ExistsMobileNumbers(viewModel.Mobile))
+                {
+                    try
+                    {
+                        MessageSender sender = new MessageSender();
+                        sender.SMS(viewModel.Mobile, "امکان تغییر کلمه ی عبور با کد تایید" + _account.GetUserActiveCode(viewModel.Mobile));
+                    }
+                    catch
+                    {
+
+                        
+                    }
+                    return RedirectToAction(nameof(Reset));
+
+                }
+                else
+                {
+                    ModelState.AddModelError("Mobile" , "کاربری با این شماره موبایل پیدا نشد");
+                }
+            }
+
+            return View(viewModel);
+        }
+
+        public IActionResult Reset()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Reset(ResetViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                if (_account.ResetPassword(viewModel.ActiveCode , viewModel.Password))
+                {
+                    return RedirectToAction(nameof(Login));
+                }
+                else
+                {
+                    ModelState.AddModelError("ActiveCode", "کد تایید شما اشتباه میباشد");
+                }
+            } 
+
+            return View(viewModel);
+        }
             
         }
     }

@@ -1,0 +1,27 @@
+﻿@model BookShop.Core.ViewModels.ResetViewModel
+
+@{
+    ViewData["Title"] = "اختصاص رمز جدید";
+    Layout = "~/Views/Shared/_Accountt.cshtml";
+}
+
+<h4 class="text-center">اختصاص رمز جدید در سایت</h4>
+<hr />
+<form asp-action="Reset">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="ActiveCode" class="form-control input-lg" placeholder="کد تایید" />
+        <span asp-validation-for="ActiveCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="Password" class="form-control input-lg" placeholder="کلمه عبور جدید" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="ConfirmPassword" class="form-control" placeholder="تایید کلمه عبور" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="تغییر زمز عبور" class="btn-lg btn-block btn-submit" />
+    </div>
+</form>

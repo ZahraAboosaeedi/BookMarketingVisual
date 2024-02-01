@@ -1,0 +1,25 @@
+﻿@model BookShop.Core.ViewModels.ForgetViewModel
+
+@{
+    ViewData["Title"] = "فراموشی رمز عبور";
+    Layout = "~/Views/Shared/_Accountt.cshtml";
+}
+
+<h4 class="text-center">فراموشی رمز در سایت</h4>
+<hr />
+<form asp-action="Forget">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="Mobile" class="form-control input-lg" placeholder=" شماره موبایل" />
+        <span asp-validation-for="Mobile" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <input type="submit" value="ارسال کد تایید" class="btn-lg btn-block btn-submit" />
+    </div>
+    <div class="form-group">
+        <h4 class="text-center">
+            <a href="/Accounts/Login">ورود به حساب کاربری</a>
+        </h4>
+    </div>
+</form>
