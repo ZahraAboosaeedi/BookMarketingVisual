@@ -73,7 +73,7 @@ namespace BookMarketingVisual
             }
 
 
-            app.UseAuthorization();
+            app.UseAuthentication();
             app.UseMvcWithDefaultRoute();
             app.UseHttpsRedirection();
             app.UseRouting();
@@ -81,7 +81,7 @@ namespace BookMarketingVisual
 
             
 
-            
+
 
             app.UseEndpoints(endpoints =>
             {
